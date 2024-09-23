@@ -9,12 +9,14 @@ function addTask() {
 
     if(inputText){
     let li = document.createElement('li');
+    let btn = document.createElement('button');
+    btn.textContent = 'remove';
     li.textContent = inputText;
+    li.appendChild(btn);
     listItem.appendChild(li);
     inputField.value ='';
     }
     else{
         alert('add task')
     }
-    
 }
