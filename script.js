@@ -15,6 +15,10 @@ function addTask() {
     li.appendChild(btn);
     listItem.appendChild(li);
     inputField.value ='';
+
+    btn.addEventListener('click' , function(){
+        listItem.removeChild(li);
+    })
     }
     else{
         alert('add task')
