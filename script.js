@@ -12,6 +12,7 @@ function addTask() {
     let btn = document.createElement('button');
     btn.textContent = 'remove';
     li.textContent = inputText;
+    li.classList.add('li-class')
     li.appendChild(btn);
     listItem.appendChild(li);
     inputField.value ='';
