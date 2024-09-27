@@ -11,8 +11,8 @@ function addTask() {
         let li = document.createElement('li');
         let btn = document.createElement('button');
         btn.textContent = 'remove';
-        // btn.style.background = 'red';
-        // btn.style.color = 'white';
+        btn.style.background = 'red';
+        btn.style.color = 'white';
         li.classList.add('li-class');
         
         let span = document.createElement('span');
