@@ -8,20 +8,32 @@ function addTask() {
     let inputText = inputField.value.trim(); 
 
     if(inputText){
-    let li = document.createElement('li');
-    let btn = document.createElement('button');
-    btn.textContent = 'remove';
-    li.textContent = inputText;
-    li.classList.add('li-class')
-    li.appendChild(btn);
-    listItem.appendChild(li);
-    inputField.value ='';
+        let li = document.createElement('li');
+        let btn = document.createElement('button');
+        btn.textContent = 'remove';
+        // btn.style.background = 'red';
+        // btn.style.color = 'white';
+        li.classList.add('li-class');
+        
+        let span = document.createElement('span');
+        span.textContent = inputText;
+        
+        li.appendChild(span);
+        li.appendChild(btn);
+        listItem.appendChild(li);
+        inputField.value = '';
 
-    btn.addEventListener('click' , function(){
-        listItem.removeChild(li);
-    })
+        li.addEventListener('click', function(e) {
+            if (e.target !== btn) {  
+                span.style.textDecoration = span.style.textDecoration === 'line-through' ? 'none' : 'line-through';
+            }
+        });
+
+        btn.addEventListener('click', function(){
+            listItem.removeChild(li);
+        });
     }
     else{
-        alert('add task')
+        alert('add task');
     }
 }
